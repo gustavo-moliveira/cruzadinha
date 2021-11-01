@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    background-color: #150f27;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 28px;
+    color: #fff;
+}
+
+.container {
+    position: fixed;
+    top: 20%;
+    right: 60%;
+}
+
+td, th{
+    width: 25px;
+    height: 25px;
+    border: 2px solid #fcfcfc;
+    border-radius: 10px;
+}
+
+input {
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
+    border: 1px solid #281c4b;
+    text-align: center;
+}
+
+.box {
+    background-color: #281c4b;
+    position: fixed;
+    height: 700px;
+    width: 900px;
+    right: 45%;
+    top: 15%;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 20px;
+}
+
+.tip_box {
+    font-family: 'Zen Kurenaido', sans-serif;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    background-color: #281c4b;
+    position: fixed;
+    height: 700px;
+    width: 600px;
+    right: 5%;
+    top: 15%;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 20px;
+}
