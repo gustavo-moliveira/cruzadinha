@@ -3,8 +3,17 @@ body {
     background-color: #150f27;
 }
 
-.header {
+.tudo{
+    margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.header {
+    display: flex;;
     justify-content: center;
     font-family: 'Zen Kurenaido', sans-serif;
     font-size: 28px;
@@ -12,9 +21,9 @@ body {
 }
 
 .container {
-    position: fixed;
-    top: 20%;
-    right: 60%;
+    position: absolute;
+    top: 19vh;
+    right: 55vw;
 }
 
 td, th{
@@ -38,7 +47,7 @@ input {
     position: fixed;
     height: 700px;
     width: 900px;
-    right: 45%;
+    right: 47%;
     top: 15%;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     border-radius: 20px;
@@ -49,7 +58,8 @@ input {
     color: #FFF;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: justify;
+    padding: 0 5vh;
     background-color: #281c4b;
     position: fixed;
     height: 700px;
@@ -63,4 +73,44 @@ input {
 
 .tip_box h3{
     margin: 1.2vh auto;
+}
+
+.b {
+    color: #281c4b;
+    background-color: #281c4b;
+    outline: none;
+    cursor: default;
+    pointer-events: none;
+}
+.c {
+    color: #fff;
+    background-color: #281c4b;
+    outline: none;
+    cursor: default;
+    pointer-events: none;
+}
+
+.d {
+    color: rgb(170, 170, 170);
+    background-color: rgb(112, 112, 112);
+    outline: none;
+    cursor: default;
+    pointer-events: none;
+}
+
+input{
+    border-radius: 4px;
+}
+
+b:read-only{
+    color: #281c4b;
+}
+
+.invisible {
+    border: 2px solid #281c4b;
+}
+
+td{
+    border: none;
+    text-decoration: none;
 }
