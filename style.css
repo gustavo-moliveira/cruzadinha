@@ -23,7 +23,7 @@ body {
 .container {
     position: absolute;
     top: 19vh;
-    right: 55vw;
+    right: 53.8vw;
 }
 
 td, th{
@@ -39,6 +39,7 @@ input {
     border-radius: 10px;
     border: 1px solid #281c4b;
     text-align: center;
+    text-transform: uppercase;
     overflow: hidden;
 }
 
@@ -47,7 +48,7 @@ input {
     position: fixed;
     height: 700px;
     width: 900px;
-    right: 47%;
+    right: 47.5%;
     top: 15%;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     border-radius: 20px;
@@ -64,7 +65,7 @@ input {
     position: fixed;
     height: 700px;
     width: 600px;
-    right: 5%;
+    right: 7%;
     top: 15%;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     border-radius: 20px;
@@ -73,6 +74,14 @@ input {
 
 .tip_box h3{
     margin: 1.2vh auto;
+}
+
+.tip_box h3{
+    color: #fa0000;
+}
+
+.tip_box .dicas{
+    color: #fff;
 }
 
 .b {
