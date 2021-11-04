@@ -37,6 +37,7 @@ function validar(){
     }
     if(eprom.e == "E" && eprom.p == "P" && eprom.r == "R" && eprom.o == "O" && eprom.m == "M"){
         quantidade++;
+        span_quantidade.innerHTML = quantidade;
         document.getElementById('dica_14').style.transition = "0.8s";
         document.getElementById('dica_14').style.color = "#5eff00";
     }else{
