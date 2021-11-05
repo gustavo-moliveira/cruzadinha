@@ -1,5 +1,5 @@
 var quantidade = 0;
-var palavra = {ram: 0, address_bus: 0, eprom: 0, data_bus: 0, rom: 0, registradores: 0, memoria_de_massa: 0, cpu: 0}
+var palavra = {ram: 0, address_bus: 0, eprom: 0, data_bus: 0, rom: 0, registradores: 0, memoria_de_massa: 0, cpu: 0, i7:0, i5:0}
 function validar(){
     ram = {r:ipt_r9.value.toUpperCase(), a:ipt_a9.value.toUpperCase(), m:ipt_m9.value.toUpperCase()};
     address_bus = {a: ipt_a9.value.toUpperCase(), d: ipt_d7.value.toUpperCase(), dd: ipt_dd7.value.toUpperCase(), r: ipt_r7.value.toUpperCase(),
@@ -11,6 +11,8 @@ function validar(){
     registradores = {r: ipt_r3.value.toUpperCase(), e: ipt_e3.value.toUpperCase(), g: ipt_g3.value.toUpperCase(), i: ipt_i3.value.toUpperCase(), s: ipt_s3.value.toUpperCase(), t: ipt_t3.value.toUpperCase(), rr:ipt_rr3.value.toUpperCase(), a:ipt_a3.value.toUpperCase(), d:ipt_d3.value.toUpperCase(), o:ipt_o3.value.toUpperCase(), rrr:ipt_rrr3.value.toUpperCase(), ee:ipt_ee3.value.toUpperCase(), ss:ipt_ss3.value.toUpperCase()};
     memoria_de_massa = {m:ipt_m4.value.toUpperCase(), e:ipt_e4.value.toUpperCase(), mm:ipt_mm4.value.toUpperCase(), o:ipt_o4.value.toUpperCase(), r:ipt_r4.value.toUpperCase(), i:ipt_i4.value.toUpperCase(), a:ipt_a4.value.toUpperCase(), d:ipt_d4.value.toUpperCase(), e:ipt_ee4.value.toUpperCase(), mmm:ipt_mmm4.value.toUpperCase(), aa:ipt_aa4.value.toUpperCase(), s:ipt_ss3.value.toUpperCase(), ss:ipt_s4.value.toUpperCase(), aaa:ipt_aaa4.value.toUpperCase()};
     cpu = {c: ipt_c1.value.toUpperCase(), p: ipt_p1.value.toUpperCase(), u: ipt_u1.value.toUpperCase()}
+    i7 = {i: ipt_i4.value.toUpperCase(), sete: ipt_sete.value.toUpperCase()}
+    i5 = {i: ipt_i3.value.toUpperCase(), cinco: ipt_cinco.value.toUpperCase()}
 
     if(ram.r == "R" && ram.a == "A" && ram.m == "M" && palavra.ram == 0){
         quantidade++;
@@ -103,5 +105,31 @@ function validar(){
         palavra.cpu = 0;
         span_quantidade.innerHTML = quantidade;
         document.getElementById('dica_1').style.color = "#fa0000";
+    }if(i7.i == "I" && i7.sete == "7" && palavra.i7 == 0){
+        quantidade++;
+        palavra.i7 = 1;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_8').style.transition = "0.8s";
+        document.getElementById('dica_8').style.color = "#5eff00";
+    }else if(palavra.i7== 1 && i7.i != "I" || palavra.i7 == 1 && i7.sete != "7"){ 
+        quantidade--;
+        console.log('erro')
+        palavra.i7 = 0;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_8').style.color = "#fa0000";
+    }if(i5.i == "I" && i5.cinco == "5" && palavra.i5 == 0){
+        quantidade++;
+        palavra.i5 = 1;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_10').style.transition = "0.8s";
+        document.getElementById('dica_10').style.color = "#5eff00";
+    }else if(palavra.i5== 1 && i5.i != "I" || palavra.i5 == 1 && i5.cinco != "5"){ 
+        quantidade--;
+        console.log('erro')
+        palavra.i5 = 0;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_10').style.color = "#fa0000";
+    }if(quantidade == 16){
+        alert('Parabéns! Você completou todas as palavras.')
     }
 }
