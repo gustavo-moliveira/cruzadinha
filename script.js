@@ -1,6 +1,6 @@
 var quantidade = 0;
-var palavra = {ram: 0, address_bus: 0, eprom: 0, data_bus: 0, rom: 0, registradores: 0, memoria_de_massa: 0, cpu: 0, i7:0, i5:0}
-function validar(){
+var palavra = {ram: 0, address_bus: 0, eprom: 0, data_bus: 0, rom: 0, registradores: 0, memoria_de_massa: 0, cpu: 0, i7:0, i5:0, quad_core:0, dual_core:0, flash:0, cs:0, dma:0, ula:0}
+function validar(){ 
     ram = {r:ipt_r9.value.toUpperCase(), a:ipt_a9.value.toUpperCase(), m:ipt_m9.value.toUpperCase()};
     address_bus = {a: ipt_a9.value.toUpperCase(), d: ipt_d7.value.toUpperCase(), dd: ipt_dd7.value.toUpperCase(), r: ipt_r7.value.toUpperCase(),
                        e: ipt_e7.value.toUpperCase(), s: ipt_s7.value.toUpperCase(), ss: ipt_ss7.value.toUpperCase(), b: ipt_b7.value.toUpperCase(), u: ipt_u7.value.toUpperCase(),
@@ -13,6 +13,12 @@ function validar(){
     cpu = {c: ipt_c1.value.toUpperCase(), p: ipt_p1.value.toUpperCase(), u: ipt_u1.value.toUpperCase()}
     i7 = {i: ipt_i4.value.toUpperCase(), sete: ipt_sete.value.toUpperCase()}
     i5 = {i: ipt_i3.value.toUpperCase(), cinco: ipt_cinco.value.toUpperCase()}
+    quad_core = {q: ipt_q11.value.toUpperCase(), u:ipt_u7.value.toUpperCase(), a:ipt_a11.value.toUpperCase(), d:ipt_d11.value.toUpperCase(), c:ipt_c11.value.toUpperCase(), o:ipt_o11.value.toUpperCase(), r:ipt_r6.value.toUpperCase(), e:ipt_e11.value.toUpperCase()}
+    dual_core = {d: ipt_d12.value.toUpperCase(),u: ipt_u15.value.toUpperCase(),a:ipt_a15.value.toUpperCase(),l:ipt_l15.value.toUpperCase(),c:ipt_c15.value.toUpperCase(),o:ipt_o15.value.toUpperCase(),r:ipt_r3.value.toUpperCase(),e:ipt_e15.value.toUpperCase()}
+    flash = {f: ipt_f13.value.toUpperCase(),l:ipt_l13.value.toUpperCase(),a:ipt_a15.value.toUpperCase(),s:ipt_s13.value.toUpperCase(),h:ipt_h13.value.toUpperCase()}
+    cs = {c: ipt_c1.value.toUpperCase(), s: ipt_s12.value.toUpperCase()}
+    dma = {d: ipt_d5.value.toUpperCase(), m: ipt_m5.value.toUpperCase(), a: ipt_a3.value.toUpperCase()}
+    ula = {u: ipt_u1.value.toUpperCase(), l:ipt_l2.value.toUpperCase(),a:ipt_a2.value.toUpperCase()}
 
     if(ram.r == "R" && ram.a == "A" && ram.m == "M" && palavra.ram == 0){
         quantidade++;
@@ -69,15 +75,16 @@ function validar(){
         quantidade --;
         span_quantidade.innerHTML = quantidade;
         document.getElementById('dica_6').style.color = "#fa0000";
-    }if(registradores.r == "R" && registradores.e == "E" && registradores.g == "G" && registradores.i == "I" && registradores.s == "S" && registradores.t == "T" && registradores.rr == "R" && registradores.a == "A" && registradores.d == "D" && registradores.o == "O" && registradores.rr == "R" && registradores.ee == "E" && registradores.ss == "S" && palavra.registradores == 0){
-        palavra.registradores = 1;
+    }if(registradores.r == "R" && registradores.e == "E" && registradores.g == "G" && registradores.i == "I" && registradores.s == "S" && registradores.t == "T" && registradores.rr == "R" && registradores.a == "A" && registradores.d == "D" && registradores.o == "O" && registradores.rrr == "R" && registradores.ee == "E" && registradores.ss == "S" && palavra.registradores == 0){
+        palavra.registradores = 1; 
         quantidade++;
         span_quantidade.innerHTML = quantidade;
         document.getElementById('dica_3').style.transition = "0.8s";
         document.getElementById('dica_3').style.color = "#5eff00";
-    }else if(palavra.registradores == 1 && registradores.r != "R" ||palavra.registradores == 1 && registradores.e != "E" ||palavra.registradores == 1 && registradores.g != "G" ||palavra.registradores == 1 && registradores.i != "I" ||palavra.registradores == 1 && registradores.s != "S" ||palavra.registradores == 1 && registradores.t != "T" ||palavra.registradores == 1 && registradores.rr != "R" ||palavra.registradores == 1 && registradores.a != "A" ||palavra.registradores == 1 && registradores.d != "D" ||palavra.registradores == 1 && registradores.o != "O" ||palavra.registradores == 1 && registradores.rr != "R" ||palavra.registradores == 1 && registradores.ee != "E" ||palavra.registradores == 1 && registradores.ss != "S"){ 
+    }else if(palavra.registradores == 1 && registradores.r != "R" ||palavra.registradores == 1 && registradores.e != "E" ||palavra.registradores == 1 && registradores.g != "G" ||palavra.registradores == 1 && registradores.i != "I" ||palavra.registradores == 1 && registradores.s != "S" ||palavra.registradores == 1 && registradores.t != "T" ||palavra.registradores == 1 && registradores.rr != "R" ||palavra.registradores == 1 && registradores.a != "A" ||palavra.registradores == 1 && registradores.d != "D" ||palavra.registradores == 1 && registradores.o != "O" ||palavra.registradores == 1 && registradores.rrr != "R" ||palavra.registradores == 1 && registradores.ee != "E" ||palavra.registradores == 1 && registradores.ss != "S"){ 
         palavra.registradores = 0;
-        quantidade --;
+        quantidade --; 
+        console.log('Testando123')
         span_quantidade.innerHTML = quantidade;
         document.getElementById('dica_3').style.color = "#fa0000";
     }if(memoria_de_massa.m == "M" && memoria_de_massa.e == "E" && memoria_de_massa.mm == "M" && memoria_de_massa.o == "O" && memoria_de_massa.r == "R" && memoria_de_massa.i == "I" && memoria_de_massa.a == "A" && memoria_de_massa.d == "D" && memoria_de_massa.e == "E" && memoria_de_massa.mmm == "M" && memoria_de_massa.aa == "A" && memoria_de_massa.s == "S" && memoria_de_massa.ss == "S" && memoria_de_massa.aaa == "A" && palavra.memoria_de_massa == 0){
@@ -129,6 +136,78 @@ function validar(){
         palavra.i5 = 0;
         span_quantidade.innerHTML = quantidade;
         document.getElementById('dica_10').style.color = "#fa0000";
+    }if(quad_core.q == "Q" && quad_core.u == "U" && quad_core.a == "A" && quad_core.d == "D" && quad_core.c == "C" && quad_core.o == "O" && quad_core.r == "R" && quad_core.e == "E" && palavra.quad_core == 0){
+        quantidade++;
+        palavra.quad_core = 1;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_11').style.transition = "0.8s";
+        document.getElementById('dica_11').style.color = "#5eff00";
+    }else if(palavra.quad_core== 1 && quad_core.q != "Q" || palavra.quad_core == 1 && quad_core.u != "U" || palavra.quad_core == 1 && quad_core.a != "A" || palavra.quad_core== 1 && quad_core.d != "D" || palavra.quad_core== 1 && quad_core.c != "C" || palavra.quad_core== 1 && quad_core.o != "O" || palavra.quad_core== 1 && quad_core.r != "R" || palavra.quad_core== 1 && quad_core.e != "E"){ 
+        quantidade--;
+        console.log('erro');
+        palavra.quad_core = 0;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_11').style.color = "#fa0000";
+    }if(dual_core.d == "D" && dual_core.u == "U" && dual_core.a == "A" && dual_core.l == "L" && dual_core.c == "C" && dual_core.o == "O" && dual_core.r == "R" && dual_core.e == "E" && palavra.dual_core == 0){
+        quantidade++;
+        palavra.dual_core = 1;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_15').style.transition = "0.8s";
+        document.getElementById('dica_15').style.color = "#5eff00";
+    }else if(palavra.dual_core== 1 && dual_core.d != "D" || palavra.dual_core == 1 && dual_core.u != "U" || palavra.dual_core== 1 && dual_core.a != "A"||palavra.dual_core== 1 && dual_core.l != "L" || palavra.dual_core== 1 && dual_core.c != "C" || palavra.dual_core== 1 && dual_core.o != "O" || palavra.dual_core== 1 && dual_core.r != "R" || palavra.dual_core== 1 && dual_core.e != "E"){ 
+        quantidade--;
+        console.log('erro')
+        palavra.dual_core = 0;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_15').style.color = "#fa0000";
+    }if(cs.c == "C" && cs.s == "S" && palavra.cs == 0){
+        quantidade++;
+        palavra.cs = 1;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_16').style.transition = "0.8s";
+        document.getElementById('dica_16').style.color = "#5eff00";
+    }else if(palavra.cs== 1 && cs.c != "C" || palavra.cs == 1 && cs.s != "S"){ 
+        quantidade--;
+        console.log('erro')
+        palavra.cs = 0; 
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_16').style.color = "#fa0000";
+    }if(flash.f == "F" && flash.l == "L" && flash.a == "A" && flash.s == "S" && flash.h == "H" && palavra.flash == 0){
+        quantidade++;
+        palavra.flash = 1;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_13').style.transition = "0.8s";
+        document.getElementById('dica_13').style.color = "#5eff00";
+    }else if(palavra.flash== 1 && flash.f != "F" ||palavra.flash== 1 && flash.l != "L" || palavra.flash == 1 && flash.a != "A" || palavra.flash== 1 && flash.s != "S"||palavra.flash== 1 && flash.h != "H"){ 
+        quantidade--;
+        console.log('erro')
+        palavra.flash = 0;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_13').style.color = "#fa0000";
+    }if(dma.d == "D" && dma.m == "M" && dma.a == "A" && palavra.dma == 0){
+        quantidade++;
+        palavra.dma = 1;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_5').style.transition = "0.8s";
+        document.getElementById('dica_5').style.color = "#5eff00";
+    }else if(palavra.dma == 1 && dma.d != "D" || palavra.dma == 1 && dma.m != "M"|| palavra.dma == 1 && dma.a != "A"){ 
+        quantidade--;
+        console.log('erro')
+        palavra.dma = 0;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_5').style.color = "#fa0000";
+    }if(ula.u == "U" && ula.l == "L" && ula.a == "A" && palavra.ula == 0){
+        quantidade++;
+        palavra.ula = 1;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_2').style.transition = "0.8s";
+        document.getElementById('dica_2').style.color = "#5eff00";
+    }else if(palavra.ula == 1 && ula.u != "U" || palavra.ula == 1 && ula.l != "L"|| palavra.ula == 1 && ula.a != "A"){ 
+        quantidade--;
+        console.log('erro')
+        palavra.ula = 0;
+        span_quantidade.innerHTML = quantidade;
+        document.getElementById('dica_2').style.color = "#fa0000";
     }if(quantidade == 16){
         alert('Parabéns! Você completou todas as palavras.')
     }
